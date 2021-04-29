@@ -24,29 +24,31 @@ for (const user of users) {
    }
 }
 
-for (const todo of todos) {
-   if (todo.userId === selectedUserID) {
-      userTodos.push({title: todo.title})
+answer = prompt(`Hi ${userInfo}, type 'view' to view your todos, or 'add' to add one`)
+newTodo = null
+
+if (answer === "view") {
+   for (const todo of todos) {
+      if (todo.userId === selectedUserID) {
+         userTodos.push({title: todo.title})
+      }
    }
+} else if (answer === "add") {
+   newTodo=prompt(`Please type your new todo.`)
+}
+
+if (newTodo === true) {
+   userTodos.push({title: newTodo})
 }
 
 console.log(userInfo)
-console.log(userTodos)
-
-
-// for (let i = 0; i < userTodos.length; i++) {
-//    console.log(userTodos[i])
-// }
+console.log(userTodos.join())
 
 
 
-// if (selectedUserID === todos.userId) {
-//    usersTodos = todos.slice()
-// }
-// console.log(usersTodos)
 
 
-// for (let i = 0; i < lastNameArr.length; i++) {
-//    newArray.push([lastNameArr[i] , uppercaseNames[i]])
-//    console.log(newArray)
-// }
+
+
+
+
